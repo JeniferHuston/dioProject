@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectId>10000</projectId>
+    <projectKey>SWAG</projectKey>
+    <exportDate>2023-01-29 23:18:00 UTC</exportDate>
+    <folders>
+        <folder fullPath="Carrinho" index="1"/>
+    </folders>
+    <testCases>
+        <testCase id="78929596" key="SWAG-T6">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Jenifer Huston</createdBy>
+            <createdOn>2023-01-29 17:41:50 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Carrinho]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Cliente com itens no carrinho quer saber o valor atual da compra ao incluir um cupom de desconto válido]]></name>
+            <objective><![CDATA[Verificar se o cupom est&aacute; sendo adicionado e o valor alterado]]></objective>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="bdd">
+                <details><![CDATA[Given que o cliente esteja na tela do carrinho
+
+And tenha pelo menos um item adicionado
+
+When preencher o código de um cupom válido
+
+Then o valor atual da compra será apresentado com o desconto.]]></details>
+            </testScript>
+        </testCase>
+        <testCase id="78929700" key="SWAG-T7" paramType="PARAMETER">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Jenifer Huston</createdBy>
+            <createdOn>2023-01-29 18:04:41 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Carrinho]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Cliente com itens no carrinho quer saber o valor atual da compra ao incluir um cupom de desconto inválido]]></name>
+            <objective><![CDATA[Validar que o cupom &eacute; inv&aacute;lido e o desconto n&atilde;o ser&aacute; aplicado]]></objective>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters>
+                <parameter index="0">
+                    <defaultValue><![CDATA[172.17.25.54]]></defaultValue>
+                    <name><![CDATA[Servidor QA]]></name>
+                </parameter>
+            </parameters>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Acessar URL x]]></description>
+                        <expectedResult><![CDATA[Usu&aacute;rio deve visualizar a tela de carrinho]]></expectedResult>
+                        <testData><![CDATA[<var>Servidor QA</var>&nbsp;]]></testData>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[Usu&aacute;rio digita o c&oacute;digo de um cupom no campo &quot;cupom&quot;&nbsp;]]></description>
+                        <expectedResult><![CDATA[Usu&aacute;rio dever&aacute; visualizar uma mensagem de cupom inv&aacute;lido]]></expectedResult>
+                        <testData><![CDATA[desc10]]></testData>
+                    </step>
+                    <step index="2">
+                        <customFields/>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+        <testCase id="78931104" key="SWAG-T8">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Jenifer Huston</createdBy>
+            <createdOn>2023-01-29 20:38:46 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Carrinho]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Cliente com itens no carrinho quer adicionar mais unidades de um mesmo produto que não possui mais estoque]]></name>
+            <objective><![CDATA[Verificar se ser&aacute; permitido adicionar unidades mesmo sem estoque]]></objective>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="bdd">
+                <details><![CDATA[Given que o cliente esteja na tela do carrinho
+
+And tenha pelo menos um item adicionado
+
+When clicar em um botão de mais
+
+Then uma mensagem será apresentada avisando que não há estoque disponível.]]></details>
+            </testScript>
+        </testCase>
+        <testCase id="78931137" key="SWAG-T9" paramType="PARAMETER">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Jenifer Huston</createdBy>
+            <createdOn>2023-01-29 20:44:41 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Carrinho]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Cliente com itens no carrinho quer adicionar mais unidades de um mesmo produto]]></name>
+            <objective><![CDATA[Verificar que mais unidades s&atilde;o adicionadas e o total alterado.]]></objective>
+            <owner>638fe02f9e48f2b9a616873b</owner>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters>
+                <parameter index="0">
+                    <defaultValue><![CDATA[172.17.25.54]]></defaultValue>
+                    <name><![CDATA[Servidor QA]]></name>
+                </parameter>
+            </parameters>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Acessar URL x]]></description>
+                        <expectedResult><![CDATA[Usu&aacute;rio deve visualizar a tela de carrinho]]></expectedResult>
+                        <testData><![CDATA[<var>Servidor QA</var>&nbsp;]]></testData>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[Ao escolher um produto da lista e clicar em mais]]></description>
+                        <expectedResult><![CDATA[Usu&aacute;rio deve visualizar que a quantidade de itens aumentou e o total da compra tamb&eacute;m]]></expectedResult>
+                    </step>
+                    <step index="2">
+                        <customFields/>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+    </testCases>
+</project>
